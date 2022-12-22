@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@ --with autoreconf
+
+override_dh_auto_clean:
+	dh_auto_clean
+	[ ! -f bindings/cpp/Makefile ] || $(MAKE) distclean -C bindings/cpp
+	rm -f bindings/cpp/doc/Makefile doc/html/*
+
+override_dh_auto_configure:
+	# autoreconf again to work around autoconf weirdness, cf. debbug#997360
+	# and https://bugzilla.redhat.com/show_bug.cgi?id=1943118
+	autoreconf -i -f
+	dh_auto_configure -- --enable-cxx -with-pic=yes
+
+override_dh_auto_build:
+	dh_auto_build
+	doxygen

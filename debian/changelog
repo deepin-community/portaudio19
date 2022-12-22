@@ -1,0 +1,293 @@
+portaudio19 (19.6.0-1.2) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian VoIP Team <pkg-voip-maintainers@lists.alioth.debian.org>  Mon, 06 Jun 2022 20:10:27 +0800
+
+portaudio19 (19.6.0-1.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Work around autoconf weirdness to fix FTBFS (Closes: #997360)
+  * Explicitly Build-Depend on pkg-config (Closes: #861236)
+  * portaudio19-dev: alternate Depends on libjack-jackd2-dev (Closes: #718221)
+  * Update uploaders list (Closes: #862625)
+  * Point to correct package git repo (Closes: #985041)
+  * Point debian/watch to upstream's new repo on GitHub
+
+ -- Florian Ernst <florian@debian.org>  Sun, 03 Apr 2022 18:44:37 +0200
+
+portaudio19 (19.6.0-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Apply crash fix patch (Closes: #944509)
+
+ -- Thorsten Glaser <tg@mirbsd.de>  Thu, 30 Jul 2020 16:27:02 +0200
+
+portaudio19 (19.6.0-1) unstable; urgency=medium
+
+  * New upstream release v190600_20161030
+  * Update debian/watch to match upstream release 19.6.0
+  * Move packaging repository to git and update Vcs links
+  * Refresh audacity-portmixer.patch
+  * Drop alsa lockup fix patch (included in upstream release)
+  * Bump Standards-Version to 3.9.8 (no changes needed)
+  * Add new Pa_GetVersionInfo@Base symbol to libportaudio2
+  * Enable all hardening flags
+  * Link jquery.js file to the one provided by libjs-jquery
+  * Drop get-orig-source rule (upstream moved from svn to git)
+  * Mark portaudio19-dev Multi-Arch: same and portaudio19-doc foreign
+
+ -- Benjamin Drung <bdrung@debian.org>  Sun, 25 Dec 2016 22:08:34 +0100
+
+portaudio19 (19+svn20140130-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix lockups in portaudio after upgrading to alsa-lib 1.1.2
+    (Closes: #833950)
+  * Build only PIC objects (Closes: #837424)
+  * Move portaudio19-dev to section libdevel (Closes: #813990)
+
+ -- Balint Reczey <balint@balintreczey.hu>  Thu, 29 Sep 2016 14:34:58 +0200
+
+portaudio19 (19+svn20140130-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Let portaudio19-dev suggest portaudio19-doc. (Closes: #735538)
+
+ -- Benjamin Drung <bdrung@debian.org>  Sun, 16 Feb 2014 00:26:56 +0100
+
+portaudio19 (19+svn20140114-1) unstable; urgency=medium
+
+  * New upstream release candidate.
+  * debian/watch: Strip _rc from upstream version.
+  * Bump Standards-Version to 3.9.5.
+  * Refresh portmixer patch.
+
+ -- Benjamin Drung <bdrung@debian.org>  Wed, 15 Jan 2014 23:17:51 +0100
+
+portaudio19 (19+svn20111121-2) unstable; urgency=low
+
+  * Bump debhelper to version 9 and drop the lintian override.
+  * Use canonical URLs for Vcs fields.
+  * Bump Standards-Version to 3.9.4 (no changes needed).
+
+ -- Benjamin Drung <bdrung@debian.org>  Wed, 02 Oct 2013 01:25:36 +0200
+
+portaudio19 (19+svn20111121-1) unstable; urgency=low
+
+  * New upstream stable release.
+  * Refresh audacity-portmixer.patch.
+  * Drop static-lib.patch (accepted upstream).
+  * Transition to Multi-Arch: same; thanks to Gregory Hainaut for the
+    patch (Closes: #645123).
+
+ -- Benjamin Drung <bdrung@debian.org>  Thu, 08 Dec 2011 00:03:04 +0100
+
+portaudio19 (19+svn20110326-2) unstable; urgency=low
+
+  * Acknowledge NMU.
+  * Use linux-any instead of hardcoded list of non-Linux architectures.
+    (Closes: #634610)
+
+ -- Benjamin Drung <bdrung@debian.org>  Wed, 20 Jul 2011 01:49:33 +0200
+
+portaudio19 (19+svn20110326-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add debian/patches/static-lib.patch to fix generation of libportaudio.a
+    (Closes: #626307).
+
+ -- Samuel Thibault <sthibault@debian.org>  Sat, 11 Jun 2011 22:52:31 +0200
+
+portaudio19 (19+svn20110326-1) unstable; urgency=low
+
+  * New upstream stable release.
+  * Update debian/watch.
+  * Refresh audacity-portmixer.patch.
+  * Bump Standards-Version to 3.9.2 (no changes required).
+
+ -- Benjamin Drung <bdrung@debian.org>  Sat, 16 Apr 2011 20:29:15 +0200
+
+portaudio19 (19+svn20110317-1) unstable; urgency=low
+
+  * New upstream stable release candidate.
+
+ -- Benjamin Drung <bdrung@debian.org>  Fri, 18 Mar 2011 15:05:49 +0100
+
+portaudio19 (19+svn20110302-1) unstable; urgency=low
+
+  * New upstream stable release candidate.
+  * Drop patches that were accepted upstream.
+  * Refresh audacity-portmixer.patch.
+  * Add new PaAlsa_SetLibraryPathName@Base to libportaudio2 symbols.
+
+ -- Benjamin Drung <bdrung@debian.org>  Sat, 05 Mar 2011 13:02:48 +0100
+
+portaudio19 (19+svn20101113-3) unstable; urgency=low
+
+  * Install headers for portAudio backends.
+
+ -- Benjamin Drung <bdrung@debian.org>  Sat, 26 Feb 2011 16:01:54 +0100
+
+portaudio19 (19+svn20101113-2) unstable; urgency=low
+
+  * Export OSS functions.
+  * Disable parallel build which can lead to a build failure.
+
+ -- Benjamin Drung <bdrung@debian.org>  Fri, 25 Feb 2011 00:51:02 +0100
+
+portaudio19 (19+svn20101113-1) unstable; urgency=low
+
+  [ Kilian Krause ]
+  * Alter Build-Depends from libjack0.100.0-dev to libjack-dev (Closes: #527423)
+
+  [ Benjamin Drung ]
+  * New upstream snapshot (Closes: #560111).
+  * Add myself to Uploaders.
+  * Refresh get-orig-source rule.
+  * Switch to debhelper 8 and use dh.
+  * Build agains libjack on all architectures (Closes: #472574).
+  * Bump Standards-Version to 3.9.1.
+  * Add ${misc:Depends} to dependencies.
+  * Update debian/copyright.
+  * Drop dpatch and switch to dpkg-source 3.0 (quilt) format.
+  * Replace 01_config.dpatch by running autoreconf (Closes: #558621).
+  * Add audacity-portmixer.patch for adding features needed to make portmixer
+    work with audacity.
+  * Add .symbols files to library packages.
+  * portaudio19-dev depends on libportaudiocpp0.
+  * Do not install .la file.
+  * Remove Mikael Magnusson from Uploaders. Thanks for your work.
+
+ -- Benjamin Drung <bdrung@debian.org>  Mon, 21 Feb 2011 00:41:10 +0100
+
+portaudio19 (19+svn20071022-3) unstable; urgency=low
+
+  [ Patrick Matthäi ]
+  * Fixed doc-base section.
+  * Removed extra whitespaces at after the Abstract field in the doc-base.
+    Thanks lintian.
+
+  [ Mark Purcell ]
+  * paravoid fixed lintian:xs-vcs-header-in-debian-control
+  * Fix lintian:debian-watch-file-is-missing
+
+ -- Mark Purcell <msp@debian.org>  Sun, 12 Oct 2008 15:35:36 +1100
+
+portaudio19 (19+svn20071022-2) unstable; urgency=low
+
+  * Vanilla 'dh_makeshlibs -a' does correct magic
+    - shlibs file incorrect: does not force dependency on libportaudiocpp0
+    (Closes: #447819)
+  * We only support upgrades from stable/etch 19+svn20060825-1, thus
+    libportaudio2 (>= 19+cvs20060311-1) is unnecssary
+
+ -- Mark Purcell <msp@debian.org>  Thu, 25 Oct 2007 06:59:26 +0100
+
+portaudio19 (19+svn20071022-1) unstable; urgency=low
+
+  [ Mark Purcell ]
+  * New upstream release
+    - libportaudio2: new snapshot (Closes: #447338)
+
+  [ Kilian Krause ]
+  * Use ${binary:Version} for binNMU-safe uploads.
+    Add dpkg-dev (>= 1.13.19) to Build-Depends
+  * Don't ignore make clean errors.
+  * Fix dh_makeshlibs call. Get rid of libportaudiocpp0 binary:
+    shlibs-declares-dependency-on-other-package libportaudio2.
+  * Add Homepage field as added in dpkg-dev 1.14.6.
+
+ -- Mark Purcell <msp@debian.org>  Tue, 23 Oct 2007 07:13:43 +0100
+
+portaudio19 (19+svn20070125-1) unstable; urgency=low
+
+  [ Mikael Magnusson ]
+  * Update to svn 20070125 (r1174)
+  * Disable JACK and ringbuffer on all architectures except i386 and
+    powerpc.  (Closes: #406754: FTBFS: #error Memory barriers are not
+    defined on this system)
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Sun, 25 Mar 2007 17:04:32 +0100
+
+portaudio19 (19+svn20070113-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/rules: add binary-indep
+  * FTBFS on GNU/kFreeBSD  (due to unsatisfied Build-Depends on
+    libasound2-dev) (Closes: #401052)
+  * FTBFS on GNU/kFreeBSD (pa_unix_oss support) (Closes: #406717)
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Sat, 13 Jan 2007 12:18:36 +0100
+
+portaudio19 (19+svn20060825-1) unstable; urgency=low
+
+  * Initial release. (Closes: #328873: portaudio: please package v19)
+  * Disable V18 compatibility and bump shlib dependency
+  * Change SONAME to libportaudio2.so
+  * Updated debian/copyright with more copyright holders and added the
+    licence interpretation from the PortAudio web site.
+  * Updated package descriptions and added homepage url:s.
+  * Removed unused patches: 20_compat and 30_alsa.
+  * Removed patches applied by upstream: 40_vpath_libtool and
+    41_vpath_libtool_gen.
+  * Fixed path to low_latency_tip.txt, moved by upstream.
+  * Add print-version and get-orig-source targets to rules.
+  * Include C++ bindings.
+  * Rename libportaudio2-dev to portaudio19-dev, since it contains the
+    developer files for both the libportaudio2 and libportaudiocpp0
+    packages. Also rename libportaudio2-doc to portaudio19-doc.
+  * Include C++ examples.
+  * Bump Standards-Version to 3.7.2. No changes required.
+  * Removed old documents and added doxygen generated documentation.
+  * Updated copyright, license modified by upstream.
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Thu, 24 Aug 2006 14:23:41 +0200
+
+portaudio19 (19+20041112-3) experimental; urgency=low
+
+  * Enabled OSS and JACK
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Tue,  1 Mar 2005 20:08:03 +0100
+
+portaudio19 (19+20041112-2) experimental; urgency=low
+
+  * Added missing depends to libportaudio19-dev: libasound2-dev, libjack-dev
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Fri, 19 Nov 2004 00:15:00 +0100
+
+portaudio19 (19+20041112-1) experimental; urgency=low
+
+  * New upstream release
+  * VPATH support in Makefile.in
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Sat, 13 Nov 2004 12:16:47 +0100
+
+portaudio19 (19+20041104-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Thu,  4 Nov 2004 16:46:48 +0100
+
+portaudio19 (19+20040729-2) experimental; urgency=low
+
+  * Added V18 compatibility.
+  * ALSA: Support of multiple devices for each card.
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Wed,  3 Nov 2004 15:56:49 +0100
+
+portaudio19 (19+20040729-1) experimental; urgency=low
+
+  * -D_REENTRANT must be specified when building libraries.
+  * Enforce symbol resolution at build time with -Wl,-z,defs.
+  * Fixed CFLAGS in configure.
+  * Link with libm and libpthread.
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Wed, 29 Sep 2004 20:24:20 +0200
+
+portaudio19 (19+20040729-0) experimental; urgency=low
+
+  * Initial Release.
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Tue, 28 Sep 2004 14:40:10 +0200
+

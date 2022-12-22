@@ -1,0 +1,84 @@
+Source: portaudio19
+Priority: optional
+Section: sound
+Maintainer: Debian VoIP Team <pkg-voip-maintainers@lists.alioth.debian.org>
+Uploaders: Kilian Krause <kilian@debian.org>,
+           Mark Purcell <msp@debian.org>,
+           Benjamin Drung <bdrung@debian.org>
+Build-Depends: automake,
+               debhelper (>= 9),
+               dh-autoreconf,
+               doxygen,
+               dpkg-dev (>= 1.13.19),
+               libasound2-dev [linux-any],
+               libjack-dev,
+               pkg-config
+Standards-Version: 3.9.8
+Homepage: http://www.portaudio.com/
+Vcs-Browser: https://salsa.debian.org/pkg-voip-team/portaudio19
+Vcs-Git: https://salsa.debian.org/pkg-voip-team/portaudio19.git
+
+Package: libportaudio2
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Portable audio I/O - shared library
+ PortAudio is a portable audio I/O library designed for cross-platform
+ support of audio. It uses a callback mechanism to request audio
+ processing.  Audio can be generated in various formats, including 32
+ bit floating point, and will be converted to the native format
+ internally.
+ .
+ This package contains the shared library.
+
+Package: libportaudiocpp0
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Portable audio I/O C++ bindings - shared library
+ PortAudio is a portable audio I/O library designed for cross-platform
+ support of audio. It uses a callback mechanism to request audio
+ processing.  Audio can be generated in various formats, including 32
+ bit floating point, and will be converted to the native format
+ internally.
+ .
+ This package contains the shared library of the C++ bindings.
+
+Package: portaudio19-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libasound2-dev [linux-any],
+         libjack-jackd2-dev | libjack-dev,
+         libportaudio2 (= ${binary:Version}),
+         libportaudiocpp0 (= ${binary:Version}),
+         ${misc:Depends}
+Suggests: portaudio19-doc
+Conflicts: libportaudio-19-dev, libportaudio-dev, libportaudio19-dev
+Replaces: libportaudio-19-dev, libportaudio19-dev
+Description: Portable audio I/O - development files
+ PortAudio is a portable audio I/O library designed for cross-platform
+ support of audio. It uses a callback mechanism to request audio
+ processing.  Audio can be generated in various formats, including 32
+ bit floating point, and will be converted to the native format
+ internally.
+ .
+ This package contains the development files.
+
+Package: portaudio19-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: libjs-jquery, ${misc:Depends}
+Description: Portable audio I/O - documentation
+ PortAudio is a portable audio I/O library designed for cross-platform
+ support of audio. It uses a callback mechanism to request audio
+ processing.  Audio can be generated in various formats, including 32
+ bit floating point, and will be converted to the native format
+ internally.
+ .
+ This package contains the documentation.
