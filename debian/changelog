@@ -1,8 +1,12 @@
-portaudio19 (19.6.0-1.2) UNRELEASED; urgency=medium
+portaudio19 (19.6.0-1.3) unstable; urgency=medium
 
+  [ Debian VoIP Team ]
   * update
 
- -- Debian VoIP Team <pkg-voip-maintainers@lists.alioth.debian.org>  Mon, 06 Jun 2022 20:10:27 +0800
+  [ tunaichao ]
+  * Rebuild with LTO enabled (dpkg vendor feature optimize/lto).
+
+ -- tunaichao <tunaichao@uniontech.com>  Mon, 14 Sep 2026 09:10:08 +0800
 
 portaudio19 (19.6.0-1.2) unstable; urgency=medium
 
